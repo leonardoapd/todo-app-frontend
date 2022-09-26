@@ -1,0 +1,40 @@
+/* Posicionar el boton flotante en la parte baja de la pantalla a la derecha */
+.create-todo-btn {
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+}
+
+.btn {
+    font-weight: 700;
+    box-shadow: 0.20rem  0.20rem 0 rgba(210,239,253,0.8);
+    transition: all .14s ease-out;
+    
+    border: 2px solid #000;
+    cursor: pointer;
+    color: #009688;
+    text-align: center;
+    background-color: #FFF;
+}
+
+
+.addTodo-btn {
+    
+    border-radius: 50%;
+   
+    width: 3rem;
+    height: 3rem;
+}
+
+.addTodo-btn:active {
+    /* Clase que estiliza el botón cuando se presiona */
+    transform: translate(0.20rem, 0.20rem);
+    box-shadow: none;
+
+}
+
+.btn:hover {
+    /* Clase que aumenta el tamaño del botón cuando se pasa el mouse por encima */
+    transform: translate(0, -0.20rem) scale(1.1);
+
+}

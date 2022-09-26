@@ -1,0 +1,23 @@
+.todo-search input {
+    margin-top: 0.5rem;
+    padding: 0.75rem 1rem;
+    /* border: 2px solid #000; */
+    border: none;
+    border-radius: 0.30rem;
+    width: 100%;
+    caret-color: cornflowerblue;
+    box-shadow: 0.20rem 0.20rem 0 rgba(210,239,253,0.8);
+}
+
+input::placeholder {
+    color: #00968870;
+    font-style: italic;
+}
+
+.todo-search {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+}
