@@ -55,13 +55,14 @@ class App extends React.Component {
 
   onSearch = (term) => {
     // Filter the todos array based on the search term
-    const filteredTodos = this.state.todos.filter((todo) => {
-      return todo.task.toLowerCase().includes(term.toLowerCase());
+    if (term) {
+      const filteredTodos = this.state.todos.filter(todo => todo.task.toLowerCase().includes(term.toLowerCase()));
+      this.setState({
+        todos: filteredTodos
+      });
+    } else {
+      this.getTodos();
     }
-    );
-    this.setState({
-      todos: filteredTodos
-    });
   }
 
   // Verificar si el todo ha sido completado o no
@@ -102,7 +103,7 @@ class App extends React.Component {
           todos: [...this.state.todos, response.data]
         });
       });
-      this.todosNoCompleted();
+    this.todosNoCompleted();
   }
 
   // Actualizar el estado de un todo a completado
@@ -133,20 +134,22 @@ class App extends React.Component {
     modal.showModal();
   }
 
-  // Llamada a la API para obtener los todos
-  async componentDidMount() {
+
+  getTodos = async () => {
+    // Obtener los todos de la API
     await axios.get(API_URL)
       .then(response => {
+        // Actualizar el estado
         this.setState({
           todos: response.data
         });
-      })
-      .catch(error => {
-        console.log(error);
       });
-
-    console.log(this.state.todos);
     this.todosNoCompleted();
+  }
+
+  // Llamada a la API para obtener los todos
+  async componentDidMount() {
+    this.getTodos();
   }
 
 

@@ -8,7 +8,7 @@
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
     gap: 0.5rem;
-    border: 2px solid rgb(175, 175, 175);
+    /* border: 2px solid rgb(175, 175, 175); */
     box-shadow: 0.20rem 0.20rem 0 rgba(210,239,253,0.8);
 }
 
