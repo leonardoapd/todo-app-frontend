@@ -1,9 +1,9 @@
 // Componente que renderiza un ToDo
-import axios from 'axios';
+// import axios from 'axios';
 import React from 'react';
 import './ToDoItem.css';
 
-const API_URL = 'http://localhost:8080/api/todos';
+// const API_URL = 'http://localhost:8080/api/todos';
 
 
 class ToDoItem extends React.Component {
@@ -11,7 +11,8 @@ class ToDoItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            completed: this.props.todo.completed
+            completed: this.props.todo.completed,
+            longPressed: false
         }
     }
 
@@ -19,7 +20,7 @@ class ToDoItem extends React.Component {
         console.log(e.target.checked);
         console.log(this.props.todo.id);
 
-       
+
 
 
         // Seleccionar el titulo y la descripcion del ToDo para tacharlos cuando completed sea true
@@ -36,7 +37,31 @@ class ToDoItem extends React.Component {
         }
 
         this.props.onComplete(this.props.todo.id, e.target.checked);
-        
+
+    }
+
+    // Funciones para poder modificar o eliminar un ToDo con un long click
+    handleMouseDown = (e) => {
+        let buttonPressTimer = setTimeout(() => { this.handleLongPress(e) }, 1000);
+        this.setState({ buttonPressTimer });
+    }
+
+    handleMouseUp = (e) => {
+        clearTimeout(this.state.buttonPressTimer);
+    }
+
+    handleMouseEnter = (e) => {
+        this.setState({ longPressed: true });
+    }
+
+    handleLongPress = (e) => {
+        console.log("long press");
+        this.setState({ longPressed: true });
+    }
+
+    handleReleasePress = (e) => {
+        console.log("release press");
+        this.setState({ longPressed: false });
     }
 
     // Cuando el componente se monta
@@ -63,16 +88,36 @@ class ToDoItem extends React.Component {
 
     render() {
         return (
-            <article className="todo-item">
-                <input type="checkbox" onChange={this.onComplete} id={"checkbox" + this.props.index} />
-                <label htmlFor={"checkbox" + this.props.index}>
-                    <div className="todo-item-text">
-                        <p className="todo-item-title" id={"title" + this.props.index}>{this.props.todo.task}</p>
-                        {/* Descripcion del todo */}
-                        <p className="todo-item-description" id={"description" + this.props.index}>{this.props.todo.description}</p>
-                    </div>
-                </label>
-            </article>
+            // La etiqueta article tiene los eventos para identificar un long click
+            <>
+                <article
+                    className="todo-item"
+                    onMouseEnter={this.handleMouseEnter}
+                    onTouchStart={this.handleMouseDown}
+                    onTouchEnd={this.handleMouseUp}
+                    onMouseLeave={this.handleReleasePress}
+                    onTouchCancel={this.handleReleasePress}
+                >
+                    <input type="checkbox" onChange={this.onComplete} id={"checkbox" + this.props.index} />
+                    <label htmlFor={"checkbox" + this.props.index}>
+                        <div className="todo-item-text">
+                            <p className="todo-item-title" id={"title" + this.props.index}>{this.props.todo.task}</p>
+                            {/* Descripcion del todo */}
+                            <p className="todo-item-description" id={"description" + this.props.index}>{this.props.todo.description}</p>
+                        </div>
+                    </label>
+                    {/* Opciones para el borrado y modificacion del todo dependiendo de si se presiona largo */}
+                    {this.state.longPressed &&
+                        <div className="todo-item-options">
+                            <i class="material-symbols-outlined todo-item-options-delete">
+                                delete
+                            </i>
+                            <i class="material-symbols-outlined todo-item-options-modify">
+                                edit
+                            </i>
+                        </div>}
+                </article>
+            </>
         )
     }
 }

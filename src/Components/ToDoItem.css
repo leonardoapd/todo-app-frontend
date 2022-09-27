@@ -1,7 +1,7 @@
 .todo-item {
     display: flex;
     align-items: center;
-    justify-content: flex-start;
+    justify-content: space-between;
     padding: 1.5rem;
     width: 100%;
     background-color: white;
@@ -39,11 +39,11 @@ input[type=checkbox] + label:before {
 
     font-size: 1rem;
 
-    border: 1px solid #8C8C8C;
+    border: 3px solid #8C8C8C;
     border-radius: 50%;
 
-    width:  1rem;
-    height: 1rem;
+    /* width:  1rem; */
+    height: 0.8rem;
 
     color: transparent;
     transition: .2s;
@@ -70,3 +70,37 @@ input[type=checkbox] + label {
     display: flex;
     align-items: center;
 }
+
+.todo-item-options {
+    display: flex;
+    place-self: center;
+}
+
+
+.material-symbols-outlined {
+    padding: 0.5rem;
+}
+
+.material-symbols-outlined:hover {
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.todo-item-options-delete {
+    color: #e74034c9;
+}
+
+.todo-item-options-delete:hover {
+    background-color: #e74034c9;
+    color: white;
+}
+
+.todo-item-options-modify {
+    color: #009688;
+}
+
+.todo-item-options-modify:hover {
+    background-color: #009688;
+    color: white;
+}
+

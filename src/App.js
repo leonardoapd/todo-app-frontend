@@ -158,7 +158,10 @@ class App extends React.Component {
       <React.Fragment>
         <ToDoCounter completed={this.state.remainingTodos} />
         <ToDoSearch onSearch={this.onSearch} />
-        <ToDoList todos={this.state.todos} key={this.state.todos.id} onComplete={this.updateCompleted} />
+        {/* Reenderizado condicional, cuando hay un fallo en la conexion a la api o no hay tareas en la bd, se renderiza que no hay tareas. */}
+        {this.state.todos.length > 0 ?
+          <ToDoList todos={this.state.todos} onComplete={this.updateCompleted} key={this.state.todos.id} />
+          : <p>No hay tareas</p>}
         <CreateToDoModal id="modal" onCreate={this.onCreate} />
         <CreateToDoBtn onCreate={this.showModal} />
       </React.Fragment>

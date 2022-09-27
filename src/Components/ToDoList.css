@@ -6,3 +6,21 @@
     padding: 1rem;
     width: 100%;
 }
+
+.todo-items {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    /* gap: 1rem; */
+}
+
+/* Hacer un grid cuando la pantalla sea mayor a 688px  */
+@media (min-width: 688px) {
+    .todo-list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: 1rem;
+    }
+}
