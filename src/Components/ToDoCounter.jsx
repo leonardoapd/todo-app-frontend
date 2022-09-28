@@ -6,7 +6,9 @@ class ToDoCounter extends React.Component {
     render() {
         return (
             <h3 className="todo-counter">
-                <span className="todo-counter-text"> You have {this.props.completed} TODOs to complete </span>
+                <p className="todo-counter-text">
+                    You have <span className='todo-counter-number'>{this.props.completed}</span> ToDo's to complete
+                </p>
             </h3>
         )
     }

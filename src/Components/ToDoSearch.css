@@ -1,16 +1,16 @@
 .todo-search input {
     margin-top: 0.5rem;
     padding: 0.75rem 1rem;
-    /* border: 2px solid #000; */
-    border: none;
+    border: 2px solid var(--border-color);
+    /* border: none; */
     border-radius: 0.30rem;
     width: 100%;
     caret-color: cornflowerblue;
-    box-shadow: 0.20rem 0.20rem 0 rgba(210,239,253,0.8);
+    box-shadow: 0.20rem 0.20rem 0 var(--secondary-color);
 }
 
 input::placeholder {
-    color: #00968870;
+    color: #72c2ed70;
     font-style: italic;
 }
 
@@ -20,4 +20,12 @@ input::placeholder {
     justify-content: center;
     align-items: center;
     padding: 1rem;
+}
+
+/* Hacer margin 3rem cuando la pantalla sea mayor a 688px */
+@media (min-width: 688px) {
+    .todo-search {
+        width: 70%;
+        margin: auto;
+    }
 }

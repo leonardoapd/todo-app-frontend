@@ -20,9 +20,6 @@ class ToDoItem extends React.Component {
         console.log(e.target.checked);
         console.log(this.props.todo.id);
 
-
-
-
         // Seleccionar el titulo y la descripcion del ToDo para tacharlos cuando completed sea true
         let title = document.getElementById(`title${this.props.index}`);
         let description = document.getElementById(`description${this.props.index}`);
@@ -62,6 +59,10 @@ class ToDoItem extends React.Component {
     handleReleasePress = (e) => {
         console.log("release press");
         this.setState({ longPressed: false });
+    }
+
+    onDelete = (e) => {
+        this.props.onDelete(this.props.todo.id);
     }
 
     // Cuando el componente se monta
@@ -109,10 +110,10 @@ class ToDoItem extends React.Component {
                     {/* Opciones para el borrado y modificacion del todo dependiendo de si se presiona largo */}
                     {this.state.longPressed &&
                         <div className="todo-item-options">
-                            <i class="material-symbols-outlined todo-item-options-delete">
+                            <i className="material-symbols-outlined todo-item-options-delete" onClick={this.onDelete}>
                                 delete
                             </i>
-                            <i class="material-symbols-outlined todo-item-options-modify">
+                            <i className="material-symbols-outlined todo-item-options-modify">
                                 edit
                             </i>
                         </div>}

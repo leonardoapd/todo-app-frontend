@@ -5,6 +5,8 @@ import { ToDoSearch } from './Components/ToDoSearch';
 import { ToDoList } from './Components/ToDoList';
 import { CreateToDoBtn } from './Components/CreateToDoBtn';
 import { CreateToDoModal } from './Components/CreateToDoModal';
+import { Tooltip } from './Components/Tooltip';
+
 // Importar axios
 import axios from 'axios';
 
@@ -39,18 +41,21 @@ class App extends React.Component {
     this.state = {
       todos: [],
       showModal: false,
-      remainingTodos: 0
+      remainingTodos: 0,
+      showTooltip: false
     };
   }
 
   todosNoCompleted = async () => {
     // Actualizar el estado de los remaining todos
-    console.log(this.state.remainingTodos);
-    console.log(this.state.todos.filter(todo => !todo.completed).length)
-    await this.setState(prevState => ({
-      remainingTodos: prevState.todos.filter(todo => !todo.completed).length
-    }));
-    console.log(this.state.remainingTodos);
+    // console.log(this.state.remainingTodos);
+    // console.log(this.state.todos.filter(todo => !todo.completed).length)
+    if (this.state.todos.length > 0) {
+      await this.setState(prevState => ({
+        remainingTodos: prevState.todos.filter(todo => !todo.completed).length
+      }));
+    }
+    // console.log(this.state.remainingTodos);
   }
 
   onSearch = (term) => {
@@ -93,7 +98,7 @@ class App extends React.Component {
     const newTodo = {
       task: task,
       description: description,
-      completed: false
+      completed: false,
     };
     // Enviar el nuevo todo a la API
     await axios.post(API_URL, newTodo)
@@ -108,7 +113,7 @@ class App extends React.Component {
 
   // Actualizar el estado de un todo a completado
   updateCompleted = async (id, completed) => {
-    console.log('updateCompleted');
+    // console.log('updateCompleted');
 
     // Cambiar el estado del ToDo a completado en la base de datos
     await axios.put(API_URL + '/' + id, {
@@ -134,6 +139,24 @@ class App extends React.Component {
     modal.showModal();
   }
 
+  showTooltip = () => {
+    this.setState({ showTooltip: true });
+    // console.log("Hola");
+  }
+
+  hideTooltip = () => {
+    this.setState({ showTooltip: false });
+  }
+
+  deleteTodo = async (id) => {
+    // Eliminar el todo de la base de datos
+    await axios.delete(API_URL + '/' + id)
+      .then(response => {
+        // Actualizar el estado
+        this.setState({ todos: this.state.todos.filter(todo => todo.id !== id) });
+      });
+    this.todosNoCompleted();
+  }
 
   getTodos = async () => {
     // Obtener los todos de la API
@@ -160,10 +183,11 @@ class App extends React.Component {
         <ToDoSearch onSearch={this.onSearch} />
         {/* Reenderizado condicional, cuando hay un fallo en la conexion a la api o no hay tareas en la bd, se renderiza que no hay tareas. */}
         {this.state.todos.length > 0 ?
-          <ToDoList todos={this.state.todos} onComplete={this.updateCompleted} key={this.state.todos.id} />
-          : <p>No hay tareas</p>}
+          <ToDoList todos={this.state.todos} onComplete={this.updateCompleted} onDelete={this.deleteTodo} key={this.state.todos.id} />
+          : <p className='no-todos'>No todo's to complete</p>}
         <CreateToDoModal id="modal" onCreate={this.onCreate} />
-        <CreateToDoBtn onCreate={this.showModal} />
+        {this.state.showTooltip && <Tooltip text="Click to create a new todo" />}
+        <CreateToDoBtn onCreate={this.showModal} onShowTooltip={this.showTooltip} onHideTooltip={this.hideTooltip} />
       </React.Fragment>
     );
   }

@@ -12,7 +12,7 @@ class ToDoSearch extends React.Component {
     render() {
         return (
             <section className="todo-search">
-                <input type="text" placeholder="Buscar ToDo" onChange={this.handleChange} />
+                <input type="text" placeholder="Search for To Do" onChange={this.handleChange} />
             </section>
         )
     }

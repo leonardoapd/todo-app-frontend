@@ -7,14 +7,14 @@
 
 .btn {
     font-weight: 700;
-    box-shadow: 0.20rem  0.20rem 0 rgba(210,239,253,0.8);
+    box-shadow: 0.20rem  0.20rem 0 var(--secondary-color);
     transition: all .14s ease-out;
     
-    border: 2px solid #000;
+    border: 2px solid var(--border-color);
     cursor: pointer;
-    color: #009688;
+    color: var(--primary-color);
     text-align: center;
-    background-color: #FFF;
+    background-color: white;
 }
 
 
@@ -36,5 +36,7 @@
 .btn:hover {
     /* Clase que aumenta el tamaño del botón cuando se pasa el mouse por encima */
     transform: translate(0, -0.20rem) scale(1.1);
-
+    background-color: var(--primary-color);
+    color: white;
+    /* box-shadow: none; */
 }

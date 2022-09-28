@@ -1,0 +1,12 @@
+.tooltip {
+    /* Acomodar tooltip cerca al boton de agregar todo */
+    position: fixed;
+    bottom: 2rem;
+    right: 5rem;
+
+    padding: 0.5rem;
+    border-radius: 0.5rem;
+    background-color: #FFF;
+    box-shadow: 0.20rem 0.20rem 0 var(--secondary-color);
+    color: var(--primary-color);
+}

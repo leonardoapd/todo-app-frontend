@@ -1,7 +1,7 @@
 .modal {
-    /* width: 360px;
-    height: 280px; */
-    border: 2px solid #000;
+    width: 460px;
+    /* height: 280px; */
+    border: 2px solid var(--border-color);
     border-radius: 0.5rem;
     margin: auto;
     /* padding: 1rem; */
@@ -11,21 +11,25 @@
     left: 0; */
     /* bottom: 0;
     right: 0; */
-    box-shadow: 0.30rem 0.30rem 0 rgba(210,239,253,0.8);
+    box-shadow: 0.30rem 0.30rem 0 var(--secondary-color);
 }
 
 .modal::backdrop {
-    background-color: rgba(30, 30, 31, 0.2);
+    background-color: rgba(0, 0, 0, 0.3);
 }
 
 .modal i {
     /* position: relative;
     right: -90%; */
     color: red;
+    transition: all .14s ease-out;
 }
 
 .modal i:hover {
     cursor: pointer;
+    /* transform: translate(0, -0.20rem) scale(1.1); */
+    background-color: red;
+    color: white;
 }
 
 .modal-body {
@@ -49,10 +53,10 @@
     /* margin-top: 0.5rem; */
     padding: 0.75rem 1rem;
     border: none;
-    border-radius: 0.30rem;
+    /* border-radius: 0.30rem; */
     width: 100%;
     caret-color: cornflowerblue;
-    box-shadow: 0 0.15rem 0 rgba(137, 203, 195, 0.3);
+    box-shadow: 0 0.15rem 0 var(--secondary-color);
 }
 
 .modal-footer {
@@ -70,8 +74,9 @@
 }
 
 .create-btn:active {
-    background-color: #009688;
+    background-color: var(--primary-color);
     color: white;
+    transform: translate(0, 0.20rem);
 }
 
 .modal-header {
@@ -86,5 +91,12 @@
 .modal-header h2 {
     font-size: 1.5rem;
     font-weight: bold;
-    color: #000;
+    color: black;
+}
+
+.error {
+    color: red;
+    font-size: 0.7rem;
+    padding: 0 1rem;
+
 }

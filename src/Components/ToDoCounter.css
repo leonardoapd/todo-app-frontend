@@ -1,4 +1,12 @@
 .todo-counter {
     text-align: center;
     margin-top: 1rem;
+    color: var(--primary-color);
+    font-family: 'Pacifico', cursive;
+}
+
+.todo-counter-number {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--secondary-color);
 }
