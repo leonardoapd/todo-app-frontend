@@ -1,70 +1,87 @@
-# Getting Started with Create React App
+# ToDo **React** App
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Hello! :wave: 
+I'm Leonardo Perdomo, **React Frontend Developer**, and this is a ToDO application developed with Create React App. 
 
-## Available Scripts
+This project was made with the purpose of learning and practicing React, and it's a simple ToDo application that allows you to add, edit, delete and mark as completed tasks.
 
-In the project directory, you can run:
+The Backend is developed with Java and Spring Boot, and will be available soon in my GitHub profile.
 
-### `npm start`
+## Getting Started
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+In the project directory, you can run: `npm start` or `yarn start` to run the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The page will reload if you make edits. You will also see any lint errors in the console.
 
-### `npm test`
+## Technologies used
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- React
+- JavaScript
+- HTML
+- CSS
 
-### `npm run build`
+### Conventions 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- BEM (Block Element Modifier)
+- Atomic Design
+- Mobile First
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Captures
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### Mobile Version
 
-### `npm run eject`
+#### Main Page
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+<img src="./captures/main_page.jpg" width="300">
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+#### Add Task
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+<img src="./captures/create.jpg" width="300">
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Completed Task
 
-## Learn More
+<img src="./captures/completed.jpg" width="300">
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Delete Task
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+<img src="./captures/options.jpg" width="300">
 
-### Code Splitting
+#### Validation Form
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+<img src="./captures/validation.jpg" width="300">
 
-### Analyzing the Bundle Size
+#### Button Tooltip
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<img src="./captures/tooltip.jpg" width="300">
 
-### Making a Progressive Web App
+### Desktop Version
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+#### Main Page
 
-### Advanced Configuration
+<img src="./captures/main_page_desktop.png" width="500">
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Installing
 
-### Deployment
+To install the project, you can run: `npm install` or `yarn install` to install all the dependencies. 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Built With
 
-### `npm run build` fails to minify
+- [React](https://reactjs.org/) - The web framework used to build the app. 
+- [Create React App] 
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Author
+
+- **Leonardo Perdomo** - [GitHub](https://github.com/leonardoapd) - [LinkedIn](https://www.linkedin.com/in/leonardo-perdomo-duran/)
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+
+## Acknowledgments
+
+- Hat tip to anyone whose code was used
+- Inspiration
+
+
+
+
