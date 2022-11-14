@@ -32,8 +32,8 @@ import axios from 'axios';
 //   }
 // ];
 
-// url de la API
-const API_URL = 'http://localhost:8080/api/todos';
+// Usar variable de entorno para la URL de la API
+const API_URL = process.env.REACT_APP_API_URL;
 
 class App extends React.Component {
   constructor(props) {

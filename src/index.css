@@ -8,7 +8,7 @@
 
     /* Declare variables for colors */
     --primary-color: rgb(61,130,235);
-    --background-page-color: #f4f4f0;
+    --background-page-color: rgb(245,245,245);
     --secondary-color: rgba(150, 217, 251, 0.8);
     --black-shadow-color: rgba(0, 0, 0, 0.2);
     --border-color: #6161616f;
