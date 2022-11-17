@@ -1,8 +1,8 @@
 .todo-counter {
     text-align: center;
     margin-top: 1rem;
-    color: var(--primary-color);
-    font-family: 'Pacifico', cursive;
+    color: var(--check-purple);
+    font-family: 'VT323', monospace;
 }
 
 .todo-counter-number {

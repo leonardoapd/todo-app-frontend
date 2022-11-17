@@ -1,6 +1,7 @@
 @import url(https://fonts.googleapis.com/css?family=Nunito+Sans:200,200italic,300,300italic,regular,italic,600,600italic,700,700italic,800,800italic,900,900italic);
 @import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 * {
     padding: 0;
     margin: 0;
@@ -13,12 +14,25 @@
     --black-shadow-color: rgba(0, 0, 0, 0.2);
     --border-color: #6161616f;
     --delete-color: #e74034c9;
+    --independence: #555B6E;
+    --morning-blue: #89B0AE;
+    --powder-blue: #BEE3DB;
+    --cultured: #FAF9F9;
+    --apricot: #FFD6BA;
+    --spring-green: #68BD45;
+    --wave--green: #00cba9;
+    --danger-color: #FF725E;
+    --lyla-purple: #C886D3;
+    --check-purple: #6280E0;
+    --light-yellow: #FFE8A4;
+    --strong-yellow: #FFD166;
+    --sky-blue: #62F8FF;
 }
 
 html {
     background-color: var(--background-page-color);
     scroll-behavior: smooth;
-    font-family: 'Nunito Sans', sans-serif;
+    font-family: 'Quicksand', sans-serif;
 }
 
 .d-flex {

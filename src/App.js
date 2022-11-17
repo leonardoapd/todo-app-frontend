@@ -1,11 +1,12 @@
 import React from 'react';
 import './App.css';
-import { ToDoCounter } from './Components/ToDoCounter';
-import { ToDoSearch } from './Components/ToDoSearch';
-import { ToDoList } from './Components/ToDoList';
-import { CreateToDoBtn } from './Components/CreateToDoBtn';
-import { CreateToDoModal } from './Components/CreateToDoModal';
-import { Tooltip } from './Components/Tooltip';
+import { ToDoCounter } from './components/ToDoCounter';
+import { ToDoSearch } from './components/ToDoSearch';
+import { ToDoList } from './components/ToDoList';
+import { CreateToDoBtn } from './components/CreateToDoBtn';
+import { CreateToDoModal } from './components/CreateToDoModal';
+import { Tooltip } from './components/Tooltip';
+import { Navbar } from './components/Navbar/Navbar';
 
 // Importar axios
 import axios from 'axios';
@@ -179,6 +180,7 @@ class App extends React.Component {
   render() {
     return (
       <React.Fragment>
+        <Navbar />
         <ToDoCounter completed={this.state.remainingTodos} />
         <ToDoSearch onSearch={this.onSearch} />
         {/* Reenderizado condicional, cuando hay un fallo en la conexion a la api o no hay tareas en la bd, se renderiza que no hay tareas. */}
