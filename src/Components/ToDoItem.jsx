@@ -65,6 +65,10 @@ class ToDoItem extends React.Component {
         this.props.onDelete(this.props.todo.id);
     }
 
+    onEdit = (e) => {
+        this.props.onEdit(this.props.todo.id);
+    }
+
     // Cuando el componente se monta
     componentDidMount() {
         // Seleccionar el titulo y la descripcion del ToDo para tacharlos cuando completed sea true
@@ -113,7 +117,7 @@ class ToDoItem extends React.Component {
                             <i className="material-symbols-outlined todo-item-options-delete" onClick={this.onDelete}>
                                 delete
                             </i>
-                            <i className="material-symbols-outlined todo-item-options-modify">
+                            <i className="material-symbols-outlined todo-item-options-modify" onClick={this.onEdit}>
                                 edit
                             </i>
                         </div>}

@@ -24,8 +24,17 @@ class ToDoList extends React.Component {
             <main className="todo-list">
                 {this.props.todos.map((todo, index) => {
                     return (
-                        <div className='todo-items' key={index} >
-                            <ToDoItem key={index} todo={todo} onComplete={this.props.onComplete} onLongPress={this.onLongPress} onDelete={this.props.onDelete} index={index} />
+                        <div
+                            className='todo-items'
+                            key={index} >
+                            <ToDoItem
+                                key={index}
+                                todo={todo}
+                                onComplete={this.props.onComplete}
+                                onLongPress={this.onLongPress}
+                                onDelete={this.props.onDelete}
+                                onEdit={this.props.onEdit}
+                                index={index} />
                         </div>
                     )
                 }

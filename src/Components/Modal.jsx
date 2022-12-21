@@ -1,8 +1,8 @@
 // Componente que renderiza un modal para crear un nuevo ToDo
 import React from 'react';
-import './CreateToDoModal.css';
+import './Modal.css';
 
-class CreateToDoModal extends React.Component {
+class Modal extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -63,7 +63,7 @@ class CreateToDoModal extends React.Component {
 
     // Metodo que se ejecuta cuando el usuario presiona el boton de crear ToDo
     onCreate = () => {
-        this.props.onCreate(this.state.task, this.state.description);
+        this.props.onCreate(this.state.task, this.state.description, this.props.taskId);
         this.setState({
             task: '',
             description: '',
@@ -100,7 +100,7 @@ class CreateToDoModal extends React.Component {
             <dialog className="modal" id="modal" onKeyDown={this.enterPressed}>
                 <div className="modal-content">
                     <div className="modal-header">
-                        <h2>Create ToDo</h2>
+                        <h2>{this.props.title}</h2>
                         <i className="material-symbols-outlined modal-close" id="close-modal" onClick={this.closeModal}>
                             cancel
                         </i>
@@ -117,7 +117,7 @@ class CreateToDoModal extends React.Component {
                         </div>
                         {this.state.errors.descriptionField && <p className="error">Please fill the description field</p>}
                         <div className="modal-footer d-flex">
-                            <button className="btn create-btn" type="submit">Create</button>
+                            <button className="btn create-btn" type="submit">{this.props.submitText}</button>
                         </div>
                     </form>
                 </div>
@@ -128,4 +128,4 @@ class CreateToDoModal extends React.Component {
     }
 }
 
-export { CreateToDoModal };
+export { Modal };
