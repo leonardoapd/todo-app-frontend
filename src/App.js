@@ -154,7 +154,7 @@ class App extends React.Component {
     // console.log('updateCompleted');
 
     // Cambiar el estado del ToDo a completado en la base de datos
-    await axios.put(API_URL + '/' + id, {
+    await axios.post(API_URL + '/' + id, {
       completed: completed
     })
       .then((response) => {
