@@ -52,12 +52,12 @@ class ToDoItem extends React.Component {
     }
 
     handleLongPress = (e) => {
-        console.log("long press");
+        // console.log("long press");
         this.setState({ longPressed: true });
     }
 
     handleReleasePress = (e) => {
-        console.log("release press");
+        // console.log("release press");
         this.setState({ longPressed: false });
     }
 
@@ -66,7 +66,13 @@ class ToDoItem extends React.Component {
     }
 
     onEdit = (e) => {
-        this.props.onEdit(this.props.todo.id);
+        // Get the values of the task and description
+        let title = document.getElementById(`title${this.props.index}`).innerHTML;
+        let description = document.getElementById(`description${this.props.index}`).innerHTML;
+
+        // Send the values to the parent component
+        this.props.onEdit(this.props.todo.id, title, description);
+        // this.props.onEdit(this.props.todo.id);
     }
 
     // Cuando el componente se monta

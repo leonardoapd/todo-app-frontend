@@ -46,7 +46,9 @@ class App extends React.Component {
       showTooltip: false,
       modalTitle: '',
       modalSubmitText: '',
-      taskId: 0
+      taskId: 0,
+      task: '',
+      description: '',
     };
   }
 
@@ -169,13 +171,13 @@ class App extends React.Component {
   }
 
   // Abrir el modal para crear un nuevo todo
-  showModal = () => {
-    // this.setState(prevState => ({
-    //   showModal: !prevState.showModal
-    // }));
-    const modal = document.getElementById('modal');
-    modal.showModal();
-  }
+  // showModal = () => {
+  //   this.setState(prevState => ({
+  //     showModal: !prevState.showModal
+  //   }));
+  //   const modal = document.getElementById('modal');
+  //   modal.showModal();
+  // }
 
   showTooltip = () => {
     this.setState({ showTooltip: true });
@@ -216,16 +218,40 @@ class App extends React.Component {
   showCreateModal = () => {
     // Abrir el modal para crear un nuevo todo
     const modal = document.getElementById('modal');
-    this.setState({ modalTitle: 'Create Todo', modalSubmitText: 'Create' });
+    this.setState({
+      modalTitle: 'Create Todo',
+      modalSubmitText: 'Create',
+      taskId: 0,
+      task: '',
+      description: ''
+    });
 
-    console.log(this.state.modalTitle);
     modal.showModal();
   }
 
-  showEditModal = (id) => {
+  showEditModal = (id, task, description) => {
+    // Setear los inputs del modal con los valores del todo
+
     // Abrir el modal para editar un todo
     const modal = document.getElementById('modal');
-    this.setState({ modalTitle: 'Edit Todo', modalSubmitText: 'Update', taskId: id });
+
+    console.log(task);
+
+    // Actualizar el estado del modal teniendo en cuenta los demas valores usando el operador spread
+    this.setState({
+      modalTitle: 'Edit Todo',
+      modalSubmitText: 'Update',
+      taskId: id,
+      task: task,
+      description: description
+    });
+
+
+    console.log(this.state.modalTitle);
+    console.log(this.state.task);
+    console.log(this.state.description);
+    console.log(this.state.taskId);
+
     modal.showModal();
   }
 
